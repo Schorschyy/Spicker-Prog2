@@ -1,0 +1,41 @@
+public static HashMap<String,Integer> wertanlagen = new HashMap<>();
+	
+	public static void insertWertanlagen() {
+		wertanlagen.put("Gold",100);
+		wertanlagen.put("Weed",10);
+		wertanlagen.put("Oil",30);
+		wertanlagen.put("BTC",70);
+	}
+  
+  public static void printWertanlagen() {
+		System.out.println(" Wertanlage:		Wert:");
+		
+		int count = 0;
+		for (String key: wertanlagen.keySet()) {  
+			System.out.println(count+": "+key+ "			" + wertanlagen.get(key));
+			count++;
+		}
+		System.out.println(count+": Zurück");
+		counter = count;
+	
+		
+	}
+	
+	
+	public static int getPreisWertanlage(int position) {
+		
+		Collection<Integer> preis = wertanlagen.values();
+		ArrayList<Integer> listOfPrices = new ArrayList<>(preis);
+		
+		int preisAnlage = listOfPrices.get(position);
+		return preisAnlage;
+	}
+	
+	public static String getWertanlage(int position) {
+		
+		Collection<String> wertanlage = wertanlagen.keySet();
+		ArrayList<String> listOfWertanlagen = new ArrayList<String>(wertanlage);
+		
+		String artWertanlage = listOfWertanlagen.get(position);
+		return artWertanlage;
+	}
