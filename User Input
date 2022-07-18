@@ -1,0 +1,38 @@
+Scanner myScanner = new Scanner(System.in);
+	boolean scannerErfolg = false;
+	while(!scannerErfolg) {
+		try {
+			System.out.print("Auswahl:");
+			auswahlanlage = myScanner.nextInt();
+			scannerErfolg=true;
+			myScanner.nextLine();
+		} catch (Exception e) {
+			e.printStackTrace();
+			scannerErfolg=false;
+			myScanner.nextLine();
+		}
+
+	
+	}
+	
+	if(auswahlanlage ==	Wertanlage.counter) {
+		return;
+	}
+	
+	int anzahl = 0;
+	scannerErfolg = false;
+	while(!scannerErfolg) {
+		try {
+			System.out.print("Wie oft Wertanlage beschaffen?");
+			anzahl = myScanner.nextInt();
+			if(context.getGuthaben() >= (anzahl * Wertanlage.getPreisWertanlage(auswahlanlage))){
+			scannerErfolg=true;
+			}
+			myScanner.nextLine();
+		} catch (Exception e) {
+			e.printStackTrace();
+			scannerErfolg=false;
+			myScanner.nextLine();
+		}
+		
+	}
